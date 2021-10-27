@@ -1,4 +1,9 @@
 
+            .bodyStyle {
+                background-color: #f3f6f4; 
+                font-family: 'Courier New', Courier, monospace; 
+                color: #544242;
+            }
             .myDiv {
               border: 5px solid white;
               background-color: #d9ead3;

@@ -3,11 +3,12 @@ body {
     background-color: #f3f6f4; 
     font-family: 'Courier New', Courier, monospace; 
     color: #544242;
+    margin: 15px;
 }
 
 .header {
     padding: 70px;
-    font-size: 50px;
+    font-size: 45px;
 }
 
 .myDiv {
@@ -93,9 +94,9 @@ body {
     display: block;
     color: black;
 }
-table {
-    margin: 0px 200px 0px 0px;
-}
+/*table {
+    margin: 0px 30px 0px 30px;
+}*/
 
 table, th, td {
     border:2px solid #544242;

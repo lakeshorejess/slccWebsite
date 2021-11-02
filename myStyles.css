@@ -4,10 +4,12 @@ body {
     font-family: 'Courier New', Courier, monospace; 
     color: #544242;
 }
+
 .header {
     padding: 50px;
     font-size: 45px;
 }
+
 .myDiv {
     border: 5px solid white;
     background-color: #d9ead3;
@@ -50,9 +52,16 @@ body {
     margin: 0;
 }
 
-.navbar a:hover, .dropdown:hover .dropbtn {
+.navbar a:hover, 
+.dropdown:hover, 
+.dropdown a:visited, 
+.dropbtn:hover, 
+.dropbtn a:visited,
+.dropdown-content
+ {
     background-color: white;
-    color: black
+    color: black;
+    display: block;
 }
 
 .dropdown-content {

@@ -80,6 +80,7 @@ body {
 
 .dropdown:hover .dropdown-content {
     display: block;
+    color: black;
 }
 
 table, th, td {
@@ -105,10 +106,6 @@ a:hover {
     color: black;
 }
 
-a:link {
-    color: #cd5b45;
-}
-
-a:visited {
+a:link, a:visited {
     color: #cd5b45;
 }

@@ -127,7 +127,6 @@ th {
 img {
     border: 7px solid white;
     float: left;
-    top: 15px;
 }
 
 .clearfix::after {

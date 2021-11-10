@@ -1,42 +1,52 @@
 
-body {
+body  {
     background-color: #f3f6f4; 
     font-family: 'Courier New', Courier, monospace; 
     color: #544242;
-    margin: 15px;
+    /* margin: 15px; */
  
 }
 
+body .bodyDiv {
+    margin: 20px;
+}
+
 h1 {
-    margin-top: 50px;
+    margin-top: 20px;
+    font-weight: bold;
 }
 
 .myHeader {
-    border: 5px solid white;
+    /* border: 5px solid white; */
     background-color: #d9ead3;
     text-align: center;
     color: #544242;
     font-family: 'Courier New', Courier, monospace;
     position: relative;
-    margin: 15px 0px;
+    /* margin: 15px 0px; */
     padding: 50px;
 }
 
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
     .header {
         font-size: 25px;
- }
-}
+    }
+
+    img {
+        float: none;
+        margin: auto;
+    }
+} */
 
 .myDiv {
-    border: 5px solid white;
+    border: 5px 0px solid white;
     background-color: #e07a5f;
     text-align: center;
     color: white;
     font-family: 'Courier New', Courier, monospace;
     position: relative;
-    margin: 15px 0px;
-    padding: 5px;
+    /* margin: 15px 0px; */
+    padding: 10px;
 }
 
 /* .navbar {
@@ -144,7 +154,8 @@ th {
 
 img {
     border: 7px solid white;
-    float: left;
+    margin: auto;
+    /* float: left; */
 }
 
 .clearfix::after {

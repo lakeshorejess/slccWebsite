@@ -12,8 +12,9 @@ body .bodyDiv {
 }
 
 h1 {
-    margin-top: 20px;
+    margin-top: 50px;
     font-weight: bold;
+    
 }
 
 .myHeader {
@@ -154,8 +155,8 @@ th {
 
 img {
     border: 7px solid white;
-    margin: auto;
-    /* float: left; */
+    /* margin: auto; */
+    float: left;
 }
 
 .clearfix::after {

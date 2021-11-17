@@ -1,3 +1,5 @@
+// window.onload = function thanks() {
+
 function thanks() {
 
     let person = prompt("Please enter your name:");
@@ -6,7 +8,7 @@ function thanks() {
     } else {
       alert("Hello " + person + "! Thank you for visiting my resume site.");
     }
-    setTimeout(thanks, 2000);
-  }
+
+}
 
 

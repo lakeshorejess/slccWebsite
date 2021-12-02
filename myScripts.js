@@ -1,12 +1,25 @@
 window.onload = function() {
   setTimeout(function() {
     let person = prompt("Please enter your name:");
-    if (person == null || person == "") {
-      alert("Hello! Thank you for visiting my resume site.");
+    const date = new Date();
+    const timeOfDay = `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}`;
+    const hour = date.getHours();
+    let greeting;
+
+    if (hour >= 5 && hour < 12) {
+        greeting = 'Good morning'
+    } else if (hour >= 12 && hour < 18) {
+        greeting = 'Good afternoon'
     } else {
-      alert("Hello, " + person + "! Thank you for visiting my resume site.");
+        greeting = 'Good evening'
+    }
+    if (person == null || person == "") {
+      alert(`${greeting}! Thank you for visiting my resume site on ${timeOfDay}.`);
+    } else {
+      alert(`${greeting}, ${person}! Thank you for visiting my resume site on ${timeOfDay}.`);
     }
   }, 2000);
 }
+
 
 

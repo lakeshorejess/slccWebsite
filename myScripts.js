@@ -1,6 +1,7 @@
 window.onload = function() {
   setTimeout(function() {
     let person = prompt("Please enter your name:");
+
     const date = new Date();
     const timeOfDay = `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}`;
     const hour = date.getHours();
@@ -20,6 +21,7 @@ window.onload = function() {
     }
   }, 2000);
 }
+//test
 
 
 

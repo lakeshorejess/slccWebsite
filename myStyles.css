@@ -40,7 +40,8 @@ h1 {
 } */
 
 .myDiv {
-    border: 5px 0px solid white;
+    border: solid white;
+    border-width: 7px 0px;
     background-color: #e07a5f;
     text-align: center;
     color: white;
@@ -48,6 +49,7 @@ h1 {
     position: relative;
     /* margin: 15px 0px; */
     padding: 10px;
+    
 }
 
 /* .navbar {
@@ -183,4 +185,10 @@ a:link, a:visited {
 .navbar-expand-lg .navbar-nav .dropdown-menu {
     position: absolute;
     background-color: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important;
+}
+
+#eduBody, 
+#proSkillsBody, 
+#empBody {
+    display: none;
 }

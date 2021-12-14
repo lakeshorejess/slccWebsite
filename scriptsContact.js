@@ -55,14 +55,15 @@ let tbReferences = document.getElementById('tbReferences')
 
 references.forEach((reference, index) => {
     let referenceTr = document.createElement('tr');
+    let number = document.createElement('td');
     let first = document.createElement('td');
     let last = document.createElement('td');
     let relation = document.createElement('td');
-    // number.innerHTML = index;
+    number.innerHTML = index + 1;
     first.innerHTML = reference.first;
     last.innerHTML = reference.last;
     relation.innerHTML = reference.relation;
-    // referenceTr.append(number);
+    referenceTr.append(number);
     referenceTr.append(first);
     referenceTr.append(last);
     referenceTr.append(relation);

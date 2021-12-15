@@ -29,4 +29,29 @@ $(document).ready(function () {
     $("#empTitle").click(function () {
         $("#empBody").toggle();
     });
+
+
+    // $("#eduTitle").bind('click', function () {
+    //     $(this).html($(this).html() == '<h3>Education &#9650;</h3>' ? '<h3>Education &#9660;</h3>' : '<h3>Education &#9650;</h3>');
+    // });
+    // $("#proSkillsTitle").on('click', function () {
+    //     $(this).html($(this).html() == '<h3>Professional Skills &#9650;</h3>' ? '<h3>Professional Skills &#9660;</h3>' : '<h3>Professional Skills &#9650;</h3>');
+    // });
+    // $("#empTitle").on('click', function () {
+    //     $(this).html($(this).html() == '<h3>Employment History &#9650;</h3>' ? '<h3>Employment History &#9660;</h3>' : '<h3>Employment History &#9650;</h3>');
+    // });
+
+    $("#eduTitle").on('click', function () {
+        /*
+        // THIS WORKS
+        let arrowUp = '<h3>Education &#9650;</h3>';
+        let arrowDown = '<h3>Education &#9660;</h3>';
+        console.log($(this).html());
+        let newHtml = $(this).html() == arrowUp ? arrowDown : arrowUp;
+        $(this).html(newHtml);
+        */
+        $(this).find('.arrow-up').toggle();
+        $(this).find('.arrow-down').toggle();
+    });
+
 });

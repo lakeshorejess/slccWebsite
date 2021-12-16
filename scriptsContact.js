@@ -21,6 +21,8 @@ const refs = [
     }
 ];
 
+
+//references in an UL form
 let referenceList = "<ul>";
 
 for (i = 0; i < refs.length; i++) {
@@ -51,6 +53,7 @@ const references = [
     }
 ]
 
+//references in a table form
 let tbReferences = document.getElementById('tbReferences')
 
 references.forEach((reference, index) => {

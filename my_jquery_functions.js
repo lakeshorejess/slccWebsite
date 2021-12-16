@@ -1,5 +1,5 @@
 
-
+//hide and show sections on Index
 $(document).ready(function () {
     $("#eduTitle").click(function () {
         $("#eduBody").toggle();
@@ -10,9 +10,9 @@ $(document).ready(function () {
     $("#empTitle").click(function () {
         $("#empBody").toggle();
     });
-
+    
+//change arrow up or down on div click
     $("#eduTitle").on('click', function () {
-
         $(this).find('.arrow-up').toggle();
         $(this).find('.arrow-down').toggle();
         /*

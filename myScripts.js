@@ -1,3 +1,5 @@
+//Greeting alert for Index Home Page
+
 window.onload = function () {
   setTimeout(function () {
     let person = prompt("Please enter your name:");

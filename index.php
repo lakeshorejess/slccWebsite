@@ -162,6 +162,7 @@
             <li>Provided feedback and technical recommendations to project sponsors and key stakeholders.</li>
         </ul>
     </div>
+    <div class="bodyDiv">
     <?php
 
     echo "Thanks for visting my site. Hope you enjoyed it!";
@@ -198,10 +199,38 @@
         // echo "<li>{$name}</li>";
         echo "<li>" . $name . "</li>";
     }
+    
     /* ?></ul><?php */
+    echo "<br>";
+    echo "<h3>My Skills Include:</h3></ul>";
+
+    $mySkills = array("PHP, SQL, JavaScript, HTML, and CSS experience", "Soft skills", "Extensive experience writing documentation", 
+    "Microsoft Office and Adobe Suite");
+
+    echo "<ul>";
+    foreach ($mySkills as $skill) {
+        echo "<li>" . $skill . "</li>";
+    }
+
     echo "</ul>";
 
+    echo "<h3>My Skills Include:</h3></ul>";
+
+    
+    function newList($array) {
+     
+    echo "<ul>";
+    foreach ($array as $arrayItem) {
+        echo "<li>" . $arrayItem . "</li>";
+    }
+    echo "</ul>";
+    
+    }
+  
+    newList($mySkills);
+
     ?>
+    </div>
     <footer style='text-align: center'>
         <div class='myDiv'>
             <h6>Copyright 2021</h6>

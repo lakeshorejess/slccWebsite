@@ -77,6 +77,28 @@
     <h3 id="aboutMe">About Me</h3>
   </div>
   <div class="bodyDiv">
+  <?php
+  
+  echo "<h3>My Skills Include:</h3></ul>";
+
+  $mySkills = array("PHP, SQL, JavaScript, HTML, and CSS experience", "Soft skills", "Extensive experience writing documentation", 
+  "Microsoft Office and Adobe Suite");
+  function newList($array) {
+   
+  echo "<ul>";
+  foreach ($array as $arrayItem) {
+      echo "<li>" . $arrayItem . "</li>";
+  }
+
+  echo "</ul>";
+  
+  }
+
+  newList($mySkills);
+
+  ?>
+  </div>
+  <div class="bodyDiv">
     <table>
       <tr>
         <th>Passions</th>

@@ -53,28 +53,51 @@ const references = [
     }
 ]
 
+function buildTable() {
 //references in a table form
-let tbReferences = document.getElementById('tbReferences')
+    let tbReferences = document.getElementById('tbReferences')
+    let rowsToClear = tbReferences.getElementsByTagName('tr');
+    console.log(rowsToClear)
+    
+    for (let i = rowsToClear.length - 1; i >= 0; i--) {
+        tbReferences.removeChild(rowsToClear[i])
+    }
 
-references.forEach((reference, index) => {
-    let referenceTr = document.createElement('tr');
-    let number = document.createElement('td');
-    let first = document.createElement('td');
-    let last = document.createElement('td');
-    let relation = document.createElement('td');
-    number.innerHTML = index + 1;
-    first.innerHTML = reference.first;
-    last.innerHTML = reference.last;
-    relation.innerHTML = reference.relation;
-    referenceTr.append(number);
-    referenceTr.append(first);
-    referenceTr.append(last);
-    referenceTr.append(relation);
-    tbReferences.append(referenceTr);
-})
-
+    references.forEach((reference, index) => {
+        let referenceTr = document.createElement('tr');
+        let number = document.createElement('td');
+        let first = document.createElement('td');
+        let last = document.createElement('td');
+        let relation = document.createElement('td');
+        number.innerHTML = index + 1;
+        first.innerHTML = reference.first;
+        last.innerHTML = reference.last;
+        relation.innerHTML = reference.relation;
+        referenceTr.append(number);
+        referenceTr.append(first);
+        referenceTr.append(last);
+        referenceTr.append(relation);
+        tbReferences.append(referenceTr);
+    })
+}
 //Form Validation
+buildTable();
 
+function addToRefs() {
+    let refFirstName = document.getElementById("refFirstName").value;
+    let refLastName = document.getElementById("refLastName").value;
+    let refRelation = document.getElementById("refRelation").value;
+    
+    references.push(
+        {
+            first: refFirstName,
+            last: refLastName,
+            relation: refRelation
+        }
+    )
+
+    buildTable();
+}
 
 function validate() {
 

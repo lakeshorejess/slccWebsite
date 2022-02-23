@@ -187,12 +187,12 @@
     echo "<br/>";
 
     for ($i = 1; $i < 5; $i++) {
-        echo "Hi " . $i . "<br/>";
+        echo "Loop " . $i . "<br/>";
     }
 
     $names = array("June", "Sally", "Margaret");
     /* ?><ul><?php */
-    echo "<ul>";
+    echo "<ol>";
     foreach ($names as $name) {
         /* ?><li><?= $name ?></li><?php */
         /* ?><li><?php echo $name ?></li><?php */
@@ -201,33 +201,34 @@
     }
     
     /* ?></ul><?php */
-    echo "<br>";
-    echo "<h3>My Skills Include:</h3></ul>";
+    echo "</ol><br/>";
+    
 
     $mySkills = array("PHP, SQL, JavaScript, HTML, and CSS experience", "Soft skills", "Extensive experience writing documentation", 
     "Microsoft Office and Adobe Suite");
 
+    $myHobbies = array('Traveling', 'Reading', 'Writing Poetry', 'Painting', 'Attending Plays and Museums');
+
+    echo "<h4>My Skills Include (foreach loop):</h4>";
     echo "<ul>";
     foreach ($mySkills as $skill) {
         echo "<li>" . $skill . "</li>";
     }
-
     echo "</ul>";
-
-    echo "<h3>My Skills Include:</h3></ul>";
-
     
     function newList($array) {
-     
-    echo "<ul>";
-    foreach ($array as $arrayItem) {
-        echo "<li>" . $arrayItem . "</li>";
+        echo "<ul>";
+        foreach ($array as $arrayItem) {
+            echo "<li>" . $arrayItem . "</li>";
+        }
+        echo "</ul>";
     }
-    echo "</ul>";
-    
-    }
-  
+
+    echo "<h4>My Skills Include (function):</h4>";
     newList($mySkills);
+
+    echo "<h4>My Hobbies Include (function):</h4>";
+    newList($myHobbies);
 
     ?>
     </div>

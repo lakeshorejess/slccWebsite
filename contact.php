@@ -76,7 +76,7 @@
     <h3 id="contactMe">Contact Me</h3>
   </div>
   <div class="bodyDiv">
-    <!-- action="http://form-test.slccwebdev.com/form-success.php" -->
+    <!-- action="http://form-test.slccwebdev.com/form-success.php" 
     <form method="post" target="_blank" name="myForm" onsubmit="return(validate());">
       <div>
         <label>Name:</label>
@@ -125,8 +125,147 @@
   <div class="myDiv shadow">
     <h3 id="referencesHeader">References</h3>
   </div>
-  <br>
+  <br> -->
+  <!-- form for PHP -->
+  <?php
+		$nameErr = $emailErr = $contBackErr = "";
+		$name = $email = $contBack = $comment = "";
+		$formErr = false;
+
+		if ($_SERVER["REQUEST_METHOD"] == "POST") {
+			
+			if (empty($_POST["name"])) {
+				$nameErr = "Name is required.";
+				$formErr = true;
+			} else {
+				$name = cleanInput($_POST["name"]);
+				//Use REGEX to accept only letters and white spaces
+				if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+					$nameErr = "Only letters and standard spaces allowed.";
+					$formErr = true;
+				}
+			}
+			
+			if (empty($_POST["email"])) {
+				$emailErr = "Email is required.";
+				$formErr = true;
+			} else {
+				$email = cleanInput($_POST["email"]);
+				// Check if e-mail address is formatted correctly
+				if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+					$emailErr = "Please enter a valid email address.";
+					$formErr = true;
+				}
+			}
+			
+			if (empty($_POST["contact-back"])) {
+				$contBackErr = "Please let us know if we can contact.";
+				$formErr = true;
+			} else {
+				$contBack = cleanInput($_POST["contact-back"]);
+			}
+			
+			$comment = cleanInput($_POST["comments"]);
+		}
+
+		function cleanInput($data) {
+			$data = trim($data);
+			$data = stripslashes($data);
+			$data = htmlspecialchars($data);
+			return $data;
+		}
+	?>
+
+	<!-- Contact Form Section -->
+	<section id="contact">
+		<div class="container py-5">
+			<!-- Section Title -->
+		<!-- <div class="row justify-content-center text-center">
+				<div class="col-md-6">
+					<h2 class="display-4 font-weight-bold">Contact Me</h2>
+					<hr />
+				</div>
+			</div> -->
+			<!-- Contact Form Row -->
+			<div class="row justify-content-center">
+				<div class="col-6">
+				
+					<!-- Contact Form Start -->
+					<form action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?> method="POST" novalidate>
+						
+						<!-- Name Field -->
+						<div class="form-group">
+							<label for="name">Full Name:</label>
+							<span class="text-danger">*<?php echo $nameErr; ?></span>
+							<input type="text" class="form-control" id="name" placeholder="Full Name" name="name" value="<?php if(isset($name)) {echo $name;}?>"" />
+							
+						</div>
+						
+						<!-- Email Field -->
+						<div class="form-group">
+							<label for="email">Email address:</label>
+							<span class="text-danger">*<?php echo $emailErr; ?></span>
+							<input type="email" class="form-control" id="email" placeholder="name@example.com" name="email" value="<?php if(isset($email)) {echo $email;} ?>" />
+						</div>
+						
+						<!-- Radio Button Field -->
+						<div class="form-group">
+							<label class="control-label">Can we contact you?</label>
+							<span class="text-danger">*<?php echo $contBackErr; ?></span>
+							<div class="form-check">
+								<input type="radio" class="form-check-input" name="contact-back" id="yes" value="Yes"  <?php if ((isset($contBack)) && ($contBack == "Yes")) {echo "checked";}?>/>
+								<label class="form-check-label" for="yes" >Yes</label>
+							</div>
+							<div class="form-check">
+								<input type="radio" class="form-check-input" name="contact-back" id="no" value="No" <?php if ((isset($contBack)) && ($contBack == "No")) {echo "checked";}?>/>
+								<label class="form-check-label" for="no" >No</label>
+							</div>
+						</div>
+						
+						<!-- Comments Field -->
+						<div class="form-group">
+							<label for="comments">Comments:</label>
+							<textarea id="comments" class="form-control" rows="3" name="comments"><?php if (isset($comment)) {echo $comment;} ?></textarea>
+						</div>
+
+						<!-- Required Fields Note-->
+						<div class="text-danger text-right">* Indicates required fields</div>
+						
+						<!-- Submit Button -->
+						<button class="btn btn-primary mb-2" type="submit" role="button" name="submit">Submit</button>
+					</form>
+					
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<?php if (($_SERVER["REQUEST_METHOD"] == "POST") && (!($formErr))) { ?>
+	
+	<section id="results" style="background-color: lightsteelblue;">
+		<div class="container py-2" >
+			<div class="row ">
+				<h1>Form Entries:</h1>
+			</div>
+			<div class="row">				
+				<ul>
+					<?php
+					if ($name !== "") { echo "<li>NAME: $name </li>"; } 
+					if ($email !== "") { echo "<li>EMAIL: $email </li>"; }
+					if ($contBack !== "") { echo "<li>CONTACT BACK: $contBack </li>"; }
+					if ($comment !== "") { echo "<li>COMMENT: $comment </li>"; }
+					?>
+				</ul>		
+			</div>
+		</div>
+	</section>
+	
+	<?php } ?>
+  </div>
   <!-- <h4>Below are my references:</h4> -->
+  <div class="myDiv shadow">
+    <h3 id="referencesSection">References</h3>
+  </div>
   <div class="bodyDiv">
     <p id="references"></p>
     <br>
@@ -143,12 +282,13 @@
     </table>
     <div class="input-group">
       <div class="input-group-prepend">
-        <span class="input-group-text" id="">First and last name</span>
+        <span class="input-group-text" id="">First, Last, and Relation</span>
       </div>
-      <input type="text" class="form-control">
-      <input type="text" class="form-control">
+      <input type="text" id="refFirstName" class="form-control">
+      <input type="text" id="refLastName" class="form-control">
+      <input type="text" id="refRelation" class="form-control">
     </div>
-    <input class="btn btn-secondary btn-lg" type="submit" value="Submit">
+    <input class="btn btn-secondary btn-lg" id="refSubmit" onclick="addToRefs()" type="submit" value="Submit">
     <br>
   </div>
 

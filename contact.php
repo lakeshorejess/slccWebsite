@@ -133,14 +133,14 @@
 		$formErr = false;
 
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
-			
+
 			if (empty($_POST["name"])) {
 				$nameErr = "Name is required.";
 				$formErr = true;
 			} else {
 				$name = cleanInput($_POST["name"]);
 				//Use REGEX to accept only letters and white spaces
-				if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+				if (!preg_match("/^[a-zA-Z ]*$/",$name)) { // regular expressions or "regex"
 					$nameErr = "Only letters and standard spaces allowed.";
 					$formErr = true;
 				}
@@ -169,9 +169,9 @@
 		}
 
 		function cleanInput($data) {
-			$data = trim($data);
-			$data = stripslashes($data);
-			$data = htmlspecialchars($data);
+			$data = trim($data); // " asdf    " => "asdf"
+			$data = stripslashes($data); // "\asdf" => "asdf" // SQL security
+			$data = htmlspecialchars($data); // "<script>" => "&lt;script&gt;", but displays in HTML as "<script>"
 			return $data;
 		}
 	?>
@@ -197,7 +197,7 @@
 						<div class="form-group">
 							<label for="name">Full Name:</label>
 							<span class="text-danger">*<?php echo $nameErr; ?></span>
-							<input type="text" class="form-control" id="name" placeholder="Full Name" name="name" value="<?php if(isset($name)) {echo $name;}?>"" />
+							<input type="text" class="form-control" id="name" placeholder="Full Name" name="name" value="<?php if(isset($name)) {echo $name;}?>" />
 							
 						</div>
 						
@@ -267,8 +267,8 @@
     <h3 id="referencesSection">References</h3>
   </div>
   <div class="bodyDiv">
-    <p id="references"></p>
-    <br>
+    <!-- <p id="references"></p> -->
+
     <table class="table table-dark">
       <thead>
         <tr>

@@ -31,7 +31,7 @@ for (i = 0; i < refs.length; i++) {
 }
 referenceList += "</ul>";
 
-document.getElementById("references").innerHTML = referenceList;
+// document.getElementById("references").innerHTML = referenceList;
 
 const references = [
     {

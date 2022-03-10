@@ -159,7 +159,7 @@
 			}
 			
 			if (empty($_POST["contact-back"])) {
-				$contBackErr = "Please let us know if we can contact.";
+				$contBackErr = "Please let us know if we can contact you.";
 				$formErr = true;
 			} else {
 				$contBack = cleanInput($_POST["contact-back"]);

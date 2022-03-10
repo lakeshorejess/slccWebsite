@@ -210,10 +210,10 @@
 						
 						<!-- Radio Button Field -->
 						<div class="form-group">
-							<label class="control-label">Can we contact you?</label>
+							<label class="control-label">Can I contact you?</label>
 							<span class="text-danger">*<?php echo $contBackErr; ?></span>
 							<div class="form-check">
-								<input type="radio" class="form-check-input" name="contact-back" id="yes" value="Yes"  <?php if ((isset($contBack)) && ($contBack == "Yes")) {echo "checked";}?>/>
+								<input type="radio" class="form-check-input" name="contact-back" id="yes" value="Yes" checked <?php if ((isset($contBack)) && ($contBack == "Yes")) {echo "checked";}?>/>
 								<label class="form-check-label" for="yes" >Yes</label>
 							</div>
 							<div class="form-check">

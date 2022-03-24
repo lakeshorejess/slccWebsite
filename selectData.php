@@ -1,63 +1,38 @@
 <?php
-    $hostname = 'jessicalindsey.slccwebdev.com';
-    $username = 'jessicalindsey';
-    $password = 'OI5jpfLWsgU9';
-    $dbname = 'test';
-
-    $hostname = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname   = "test";
+    $hostname = "php-mysql-exercisedb.slccwebdev.com";
+    $username = "phpmysqlexercise";
+    $password = "mysqlexercise";
+    $databasename = "php_mysql_exercisedb";
 
     try {
         //Create new PDO Object with connection parameters
-        $conn = new PDO("mysql:host=$hostname;dbname=$dbname",$username, $password);
+        $conn = new PDO("mysql:host=$hostname;dbname=$databasename",$username, $password);
         
         //Set PDO error mode to exception
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
         
-        //Send success message to screen
-        echo "Database Connection Successful!";
+        //Variable containing SQL command
+        $sql = "SELECT * FROM jl_sp22_Contacts;";        
+
+        //Execute SQL statement on server
+        $return = $conn->query($sql);
+
+        //Print returned data to the screen
+        echo "<b>The data currently in the database: </b><br>\n";
+        foreach ($conn->query($sql) as $row) {
+            echo $row['contactID'] . " | ";
+            echo $row['name'] . " | ";
+            echo $row['email'] . " | ";
+            echo $row['contactBack'] . " | ";
+            echo $row['comments'] . " | ";
+            echo $row['dateSent'] . "<br>\n";}
 
 
     } catch (PDOException $error) {
 
         //Return error code if one is created
-        echo "Connection Failed: " . $error->getMessage();
+        echo "Execution error: <br>" . $sql . "<br>" . $error->getMessage();
     }
 
     $conn = null;
 ?>
-   
-<!-- //     try {
-//         //Create a new PDO Object with connection parameters
-//         $conn = new PDO('mysql:host=$hostname;dbname=$dbname;, $username, $password');
-        
-//         //Set PDO error mode to exception
-//         $conn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-//         $sql = 'SELECT * FROM contacts';
-
-//         //Executes SQL statement on the server
-//         $conn -> exec($sql);
-
-//         //Send success message
-//         echo '<b>The data currently in the database: </b><br>\n';
-//         foreach ($conn -> query($sql) as $row){
-//             echo $row['contactID'] . ' | ';
-//             echo $row['name'] . ' | ';
-//             echo $row['email'] . ' | ';
-//             echo $row['contactBack'] . ' | ';
-//             echo $row['dateSent'] . ' | ';
-//         };
-        
-//         //Send a success message to screen
-//         echo 'Database connection successful!';
-//     }  catch (PDOExceoption $error) {
-//         //Return error code if one is created
-//         echo 'Connection failed: ' . $error -> getMessage();
-//     }
-
-//     $conn = null;
-
-// -->

@@ -1,23 +1,16 @@
 <?php
-    $hostname = 'jessicalindsey.slccwebdev.com';
-    $username = 'jessicalindsey';
-    $password = 'OI5jpfLWsgU9';
-    $dbname = 'test';
-
-    <?php
-
-    $hostname = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname   = "test";
+   $hostname = "php-mysql-exercisedb.slccwebdev.com";
+   $username = "phpmysqlexercise";
+   $password = "mysqlexercise";
+   $databasename = "php_mysql_exercisedb";
 
     try {
         //Create new PDO Object with connection parameters
         $conn = new PDO("mysql:host=$hostname;dbname=$dbname",$username, $password);
         
         //Set PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
-        
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
         //Send success message to screen
         echo "Database Connection Successful!";
 
@@ -29,7 +22,7 @@
     }
 
     $conn = null;
-?>
+
 
 //     try {
 //         //Create a new PDO Object with connection parameters
@@ -60,6 +53,7 @@
 
 //     $conn = null;
 
-// ?>
+// 
+?>
 
 

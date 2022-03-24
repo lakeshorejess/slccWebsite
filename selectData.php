@@ -27,8 +27,9 @@
     }
 
     $conn = null;
+?>
    
-//     try {
+<!-- //     try {
 //         //Create a new PDO Object with connection parameters
 //         $conn = new PDO('mysql:host=$hostname;dbname=$dbname;, $username, $password');
         
@@ -59,4 +60,4 @@
 
 //     $conn = null;
 
-// ?>
+// -->

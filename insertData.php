@@ -20,11 +20,7 @@
 
         $last_id = $conn->lastInsertId();
 
-        // //Send success message
-        // echo 'Table Created Successfully';
         
-        // //Send a success message to screen
-        // echo 'Database connection successful!';
     }  catch (PDOExceoption $error) {
         //Return error code if one is created
         echo 'Connection failed: ' . $error -> getMessage();

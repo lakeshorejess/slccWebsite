@@ -163,80 +163,49 @@
         </ul>
     </div>
     <div class="bodyDiv">
-    <?php
+    <!-- <?php
 
-    echo "Thanks for visting my site. Hope you enjoyed it!";
-    echo "<br/>";
+    // echo "Thanks for visting my site. Hope you enjoyed it!";
+    // echo "<br/>";
 
-    $greeting = "Have a nice day!";
-    echo $greeting;
+    // $greeting = "Have a nice day!";
+    // echo $greeting;
 
-    echo "<br/>";
+    // echo "<br/>";
 
-    $value1 = 7;
-    $value2 = 11;
-    $value3 = $value1 + $value2;
-    $value4 = $value1 - $value2;
-    $value5 = $value1 * $value2;
+    // $value1 = 7;
+    // $value2 = 11;
+    // $value3 = $value1 + $value2;
+    // $value4 = $value1 - $value2;
+    // $value5 = $value1 * $value2;
 
-    echo $value1 . " + " . $value2 . " = " . ($value1 + $value2);
-    echo "<br/>";
-    echo $value1 . " - " . $value2 . " = " . $value4;
-    echo "<br/>";
-    echo $value1 . " x " . $value2 . " = " . $value5;
-    echo "<br/>";
+    // echo $value1 . " + " . $value2 . " = " . ($value1 + $value2);
+    // echo "<br/>";
+    // echo $value1 . " - " . $value2 . " = " . $value4;
+    // echo "<br/>";
+    // echo $value1 . " x " . $value2 . " = " . $value5;
+    // echo "<br/>";
 
-    for ($i = 1; $i < 5; $i++) {
-        echo "Loop " . $i . "<br/>";
-    }
+    // for ($i = 1; $i < 5; $i++) {
+    //     echo "Loop " . $i . "<br/>";
+    // }
 
-    $names = array("June", "Sally", "Margaret");
-    /* ?><ul><?php */
-    echo "<ol>";
-    foreach ($names as $name) {
-        /* ?><li><?= $name ?></li><?php */
-        /* ?><li><?php echo $name ?></li><?php */
-        // echo "<li>{$name}</li>";
-        echo "<li>" . $name . "</li>";
-    }
-    
-    /* ?></ul><?php */
-    echo "</ol><br/>";
+      /* ?></ul><?php */
+    // echo "</ol><br/>";
     
 
-    $mySkills = array("PHP, SQL, JavaScript, HTML, and CSS experience", "Soft skills", "Extensive experience writing documentation", 
-    "Microsoft Office and Adobe Suite");
+    // $mySkills = array("PHP, SQL, JavaScript, HTML, and CSS experience", "Soft skills", "Extensive experience writing documentation", 
+    // "Microsoft Office and Adobe Suite");
 
-    $myHobbies = array('Traveling', 'Reading', 'Writing Poetry', 'Painting', 'Attending Plays and Museums');
-
-    echo "<h4>My Skills Include (foreach loop):</h4>";
-    echo "<ul>";
-    foreach ($mySkills as $skill) {
-        echo "<li>" . $skill . "</li>";
-    }
-    echo "</ul>";
-    
-    function newList($array) {
-        echo "<ul>";
-        foreach ($array as $arrayItem) {
-            echo "<li>" . $arrayItem . "</li>";
-        }
-        echo "</ul>";
-    }
-
-    echo "<h4>My Skills Include (function):</h4>";
-    newList($mySkills);
-
-    echo "<h4>My Hobbies Include (function):</h4>";
-    newList($myHobbies);
+   
 
     ?>
     </div>
     <footer style='text-align: center'>
         <div class='myDiv'>
-            <h6>Copyright 2021</h6>
+            <h6>Copyright 2022</h6>
         </div>
-    </footer>
+    </footer> -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

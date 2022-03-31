@@ -28,7 +28,7 @@
             <a class="nav-link active" aria-current="page" href="about.php">ABOUT</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="contact.php">CONTACT</a>
+            <a class="nav-link active" aria-current="page" href="form.php">CONTACT</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="JessicaLindseyResume.docx" download>RESUME</a>
@@ -79,25 +79,48 @@
   <div class="bodyDiv">
   <?php
   
-  echo "<h3>My Skills Include:</h3></ul>";
+  // echo "<h3>My Skills Include:</h3></ul>";
 
   $mySkills = array("PHP, SQL, JavaScript, HTML, and CSS experience", "Soft skills", "Extensive experience writing documentation", 
   "Microsoft Office and Adobe Suite");
-  function newList($array) {
+  // function newList($array) {
    
-  echo "<ul>";
-  foreach ($array as $arrayItem) {
-      echo "<li>" . $arrayItem . "</li>";
-  }
+  // echo "<ul>";
+  // foreach ($array as $arrayItem) {
+  //     echo "<li>" . $arrayItem . "</li>";
+  // }
 
-  echo "</ul>";
+  // echo "</ul>";
   
+  // }
+
+  // newList($mySkills);
+
+  $myHobbies = array('Traveling', 'Reading', 'Writing Poetry', 'Painting', 'Attending Plays and Museums');
+
+  // echo "<h4>My Skills Include (foreach loop):</h4>";
+  // echo "<ul>";
+  // foreach ($mySkills as $skill) {
+  //     echo "<li>" . $skill . "</li>";
+  // }
+  // echo "</ul>";
+  
+  function newList($array) {
+      echo "<ul>";
+      foreach ($array as $arrayItem) {
+          echo "<li>" . $arrayItem . "</li>";
+      }
+      echo "</ul>";
   }
 
+  echo "<h4>My Skills Include:</h4>";
   newList($mySkills);
 
+  echo "<h4>My Hobbies Include:</h4>";
+  newList($myHobbies);
+
   ?>
-  </div>
+  <!-- </div>
   <div class="bodyDiv">
     <table>
       <tr>
@@ -121,12 +144,12 @@
         <td>Fast learner</td>
       </tr>
     </table>
-  </div>
-  <footer style='text-align: center'>
+  </div> -->
+  <!-- <footer style='text-align: center'>
     <div class='myDiv shadow'>
       <h6>Copyright 2021</h6>
     </div>
-  </footer>
+  </footer> -->
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

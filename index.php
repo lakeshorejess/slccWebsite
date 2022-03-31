@@ -37,7 +37,7 @@
                         <a class="nav-link active" aria-current="page" href="about.php">ABOUT</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="contact.php">CONTACT</a>
+                        <a class="nav-link active" aria-current="page" href="form.php">CONTACT</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="JessicaLindseyResume.docx"
